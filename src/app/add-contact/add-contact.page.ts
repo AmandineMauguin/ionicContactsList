@@ -24,9 +24,14 @@ export class AddContactPage implements OnInit {
     
     const body = new URLSearchParams(formData).toString();
     this.http.post('http://localhost:3000/contacts', body, {headers}).subscribe((response) => {
-      if (response)
-      console.log('response');
-      //this.router.navigateByUrl('/home');
+      if (response['errors']){
+        alert(response['message']);
+        console.log(response);
+        
+      }else {
+        this.router.navigateByUrl('/home');
+      }
+    
     })
   }
 
