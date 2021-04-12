@@ -18,6 +18,7 @@ export class HomePage {
     this.http.get( this.API_URL ).subscribe( (data) => {
       console.log(data);
       this.contacts = data;
+      this.contacts.reverse();
     });
    }
 

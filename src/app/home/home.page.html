@@ -3,6 +3,9 @@
     <ion-title>
       Contacts
     </ion-title>
+    <ion-buttons slot="end">
+  <ion-button [routerLink]="['/add-contact']">Add</ion-button> 
+</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,4 +19,10 @@
     </ion-label>
   </ion-item>
 </ion-list>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button [routerLink]="['/add-contact']">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>
